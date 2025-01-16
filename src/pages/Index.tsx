@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 // Component imports will be added here automatically
+import DashboardInteractions from "../components/DashboardInteractions";
 import AuthPage from "../components/AuthPage";
 
 export default function Index() {
-  const [components] = useState(["AuthPage"]);
+  const [components] = useState(["AuthPage", "DashboardInteractions"]);
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
 
   const renderComponent = (componentName: string) => {
