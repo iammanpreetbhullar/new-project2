@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 // Component imports will be added here automatically
+import UserProfile from "../components/UserProfile";
 import DashboardInteractions from "../components/DashboardInteractions";
 import AuthPage from "../components/AuthPage";
 
 export default function Index() {
-  const [components] = useState(["AuthPage", "DashboardInteractions"]);
+  const [components] = useState(["AuthPage", "DashboardInteractions", "UserProfile"]);
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
 
   const renderComponent = (componentName: string) => {
@@ -36,6 +37,7 @@ export default function Index() {
           <div className="border rounded-lg p-4">
             {/* Dynamic component rendering */}
             {activeComponent === "AuthPage" && <AuthPage />}
+            {activeComponent === "UserProfile" && <UserProfile />}
           </div>
         </div>
       )}
